@@ -1,2 +1,4 @@
-package ru.raylux.bot;public class OtherMatters {
+package ru.raylux.bot;
+
+public class OtherMatters {
 }
