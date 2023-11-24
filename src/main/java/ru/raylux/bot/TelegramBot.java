@@ -9,9 +9,9 @@ import ru.raylux.lamp.*;
 
 public class TelegramBot extends TelegramLongPollingBot {
     private static final String NAME = "Mixon_AI_bot";
-    private static final String TOKEN = "0";
+    private static final String TOKEN = "";
     private static final String NON_STANDART = "https://docs.google.com/forms";
-    private static final long IDMIXON = 0;
+    private static final long IDMIXON = 111;
     private static String tempLamp = "";
 
     public static String getTempLamp() {
@@ -78,7 +78,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             sendMessage.setChatId(chatId);
             sendMessage.setText("Привет, это Михаил_ИИ! Выбери в меню по какому светильнику у тебя вопрос: " +
                     "\nR-lux" + "\nA-lux" + "\nO-lux" + "\nC-lux" + "\nH-lux" + "\nP-lux" + "\ni-lux" + "\nS-lux" +
-                    "\nНестандарт");
+                    "\nНестандарт" + "\nСертификат");
         } else if (text.toLowerCase().contains("rlux")
                 || text.toLowerCase().contains("alux")
                 || text.toLowerCase().contains("olux")
@@ -92,6 +92,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         } else if (text.toLowerCase().contains("nonstandard")) {
             sendMessage.setChatId(chatId);
             sendMessage.setText("Для расчета нестандарта заполни форму по ссылке: " + NON_STANDART);
+        } else if (text.toLowerCase().contains("сертификат") || text.toLowerCase().contains("декларация/сертификат")) {
+            sendMessage.setChatId(chatId);
+            sendMessage.setText("Cертификаты и декларации хранятся в : ЯндексДиск\\NEW Рэйлюкс ПАПКА ДИЛЕРА\\Сертификаты");
         } else {
             sendMessage.setChatId(chatId);
             sendMessage.setText("Привет! То, что ты просишь пока не умею! Переадресую твое сообщение");
